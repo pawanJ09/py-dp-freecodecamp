@@ -21,8 +21,9 @@ def how_sum(target_sum, numbers, memo=None):
         remainder = target_sum - num
         result = how_sum(remainder, numbers, memo)
         if result is not None:
-            memo[target_sum] = result.append(num)
-            return result
+            res = [r for r in result]
+            memo[target_sum] = res.append(num)
+            return res
     memo[target_sum] = None
     return None
 
